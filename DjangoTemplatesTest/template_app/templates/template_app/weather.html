@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Weather</h1>
+    <br>
+    <!-- jinja syntax-->
+    <h2>Istanbul :{{istanbul}}</h2>
+    <br>
+    <h2>Malatya:{{malatya}}</h2>
+    <br>
+    <h2> {% for key,value in ankara.items %}
+        <li>Ankara: {{ key }} -> {{ value }}</li>
+    {% endfor %}
+    </h2>
+
+    {% if user_premium %}
+        <h2>user premium!</h2>
+        <ul >
+    {% for item in izmir %}
+        <li>
+            {% if item < 6  %}
+                <h2>İzmir is so cold</h2>
+            {%else%}
+                <h2>İzmir : {{ item }}</h2>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    <br>
+    <h2>{{ test | upper }}</h2>
+
+    <br>
+
+    <h2><a href="{% url 'template_app:index'  %}">Go to Index</a></h2>
+
+{% endblock %}
