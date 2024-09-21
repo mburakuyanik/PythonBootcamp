@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <ul>
+    {% for tweets in all_tweets %}
+    	<li>{{tweets.nickname}} --> {{ tweets.tweet }}</li>
+    {% endfor %}
+
+    </ul>
+    {{ tweet }}{{ tweets }}{{ tweet }}{{ tweet }}{{ tweet }}
+
+{% endblock %}
